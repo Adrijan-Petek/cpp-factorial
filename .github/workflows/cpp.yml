@@ -1,0 +1,12 @@
+name: C++ Factorial
+on: [push, pull_request]
+jobs:
+  run-cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and Run
+        run: |
+          cd program4-cpp-factorial
+          g++ factorial.cpp -o factorial
+          ./factorial
